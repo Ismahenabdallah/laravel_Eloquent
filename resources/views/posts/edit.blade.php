@@ -1,7 +1,8 @@
 
 @extends("layouts.nav")
 @section('content')
-<form action="{{ route('posts.update' , ['posts' => $e->id]) }}" method="POST">
+
+<form  action="{{ route('posts.update' ,  $e->id) }}"  method="POST">
 
     @csrf
     @method("put")
@@ -14,7 +15,7 @@
             @enderror
     <br/>
     <br/>
-    <input type="text" value="{{ $e->body }}" name="description" placeholder="Enter body"/>
+    <input type="text" value="{{ $e->description }}" name="description" placeholder="Enter body"/>
     @error('description')
     {{-- <p style="color: red">name must be required</p> --}}
     <p style="color: red">{{ $message }}</p>

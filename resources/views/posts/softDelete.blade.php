@@ -1,7 +1,7 @@
 
 @extends("layouts.nav")
 @section('content')
-<h1>All Posts</h1>
+<h1>All Posts Deleted</h1>
 
 <table class="table">
     <thead>
@@ -14,36 +14,27 @@
       </tr>
     </thead>
     <tbody>
-        @forelse ( $data as $q )
+        @forelse ( $d as $q )
       <tr >
 
         <th scope="row">{{ $q->id }}</th>
         <td>{{  $q->title }}</td>
         <td>{{  $q->description }}</td>
         <td style="display:flex">
-            <a class="btn btn-outline-success" style="height:50%; width: 80px"  href="{{ route('posts.edit', $q->id) }}">Edit</a>
+            <a class="btn btn-outline-primary" style="height:50%; width: 80px"  href="{{ route('posts.restoreData', $q->id) }}">Restore</a>
 
-            <form action="{{ route('posts.destroy' , $q->id) }}" method="POST">
+            <form action="{{ route('posts.DeleteDefinitely' , $q->id) }}" method="POST">
         @csrf
         @method('delete')
-        <button class="btn btn-outline-danger" type="submit">Delete</button>
+        <button class="btn btn-outline-danger" type="submit"> Delete Definitely</button>
         </form>
         </td>
 
       </tr>
       @empty
-      <p>No Posts In Data Base  </p>
-      @endforelse
+      <p>No Posts Deleted  </p>
     </tbody>
   </table>
 
-
-
-
-@if (isset($scoope))
-
-<h1>query scoope : {{ $scoope }}</h1>
-@else
- <h1> No condition of Query Scope "Ismahen"</h1>
-@endif
+ @endforelse
 @endsection

@@ -24,6 +24,11 @@
                         <a  style="padding: .5rem ;"href="/posts">PostIndex</a>
 
                       </li>
+                      <li class="nav-item">
+                        <a  style="padding: .5rem ;"href="/posts/softdelete">Post Deleted</a>
+
+                      </li>
+
                     </ul>
                   </div>
                 </div>
