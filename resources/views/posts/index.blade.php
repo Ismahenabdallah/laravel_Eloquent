@@ -42,8 +42,8 @@
 
 @if (isset($scoope))
 
-<h1>query scoope : {{ $scoope }}</h1>
+<h1>query scoope  : {{ $scoope }}</h1>
 @else
- <h1> No condition of Query Scope "Ismahen"</h1>
+ <h1> No condition of Query Scope "Ismahen" where "description"="ismahen"</h1>
 @endif
 @endsection
