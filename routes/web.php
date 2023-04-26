@@ -28,11 +28,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified', 'check_user'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::middleware(['auth', 'verified' , "check_user"])->group(function () {
+Route::middleware(['auth', 'verified', 'check_user'])->group(function () {
     // Route::get('dashboard', function () {
     //     return Inertia::render('Dashboard');
     // });
