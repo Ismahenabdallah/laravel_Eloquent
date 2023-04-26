@@ -10,7 +10,7 @@ class MailController extends Controller
     public function index()
     {
         $mailData = [
-            'from' => 'ismahn abfkod',
+            'title' => 'ismahn abdallah',
             'body' => 'this is for testing using email smtp',
         ];
         Mail::to('smartdeliveryy77@gmail.com')->send(new TestMail($mailData));
