@@ -8,22 +8,16 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class WelcomeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public $mailData;
+public $user;
 
-    public function __construct($mailData)
+    public function __construct($user)
     {
 
-        /** mailData hiya eli bech t3aytelha f testMail.blade.php
-         * $this->mailDta houwa nafsou el variable eli declarytou mil awel
-         */
-        $this->mailData = $mailData;
+     $this->user = $user;
     }
 
     /**
@@ -32,7 +26,7 @@ class TestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Mail',
+            subject: 'Welcome Mail',
         );
     }
 
@@ -42,7 +36,7 @@ class TestMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.Test',
+            markdown: 'emails.WelcomeMail',
         );
     }
 
