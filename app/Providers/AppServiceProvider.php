@@ -22,8 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-     User::created(function ($user) {
-        Mail::to($user)->send(new WelcomeMail($user));
-     });
+        //methode build in 
+    //  User::created(function ($user) {
+    //     Mail::to($user)->send(new WelcomeMail($user));
+    //  });
     }
 }
